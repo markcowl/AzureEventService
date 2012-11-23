@@ -31,7 +31,7 @@ EventService.prototype = {
                 res.render('detail', {
                     title: eventItem.name,
                     eventItem: eventItem,
-                    imageUrl: self.blobClient.getBlobUrl('photos', eventItem.RowKey).url(),
+                    imageUrl: self.blobClient.getBlobUrl('myphotos', eventItem.RowKey).url(),
                 });
             }
         });
@@ -83,7 +83,7 @@ EventService.prototype = {
                   metadata: { fileName: item.RowKey }
                 };
 
-                self.blobClient.createBlockBlobFromFile('photos', item.RowKey, req.files.item.file.path, options, function (error1, blockBlob, response) {
+                self.blobClient.createBlockBlobFromFile('myphotos', item.RowKey, req.files.item.file.path, options, function (error1, blockBlob, response) {
                   if (error1) {
                     throw error;
                   } else {
