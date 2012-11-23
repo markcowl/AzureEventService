@@ -1,4 +1,5 @@
-AzureEvenService
-================
+# My Events Sample #
 
-Event Service for Azure
+This is the code used in the following video:
+
+http://channel9.msdn.com/Events/windowsazure/learn/Node-JS-in-Windows-Azure
