@@ -11,8 +11,8 @@ var express = require('express')
 var app = module.exports = express.createServer(); 
 
 
-var tableClient = azure.createTableService('UseDevelopmentStorage=true'); 
-var blobClient = azure.createBlobService('UseDevelopmentStorage=true').withFilter(new azure.ExponentialRetryPolicyFilter());
+var tableClient = azure.createTableService(); 
+var blobClient = azure.createBlobService().withFilter(new azure.ExponentialRetryPolicyFilter());
  
 // Create table and blob
 tableClient.createTableIfNotExists('events', function(error) { 
@@ -20,11 +20,11 @@ tableClient.createTableIfNotExists('events', function(error) {
     throw error;
   } 
 });
-blobClient.createContainerIfNotExists('photos', function(error) { 
+blobClient.createContainerIfNotExists('myphotos', function(error) { 
   if (error) {
     throw error;
   }
-  blobClient.setContainerAcl('photos', azure.Constants.BlobConstants.BlobContainerPublicAccessType.BLOB, function (error1) {
+  blobClient.setContainerAcl('myphotos', azure.Constants.BlobConstants.BlobContainerPublicAccessType.BLOB, function (error1) {
         if (error1) {
           throw error1;
         }
