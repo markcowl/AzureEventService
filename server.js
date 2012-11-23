@@ -5,7 +5,7 @@
  
 var express = require('express') 
   , EventService = require('./eventService')
-  , azure = require('./../../lib/azure')
+  , azure = require('azure')
   , ServiceClient = azure.ServiceClient;
  
 var app = module.exports = express.createServer(); 

@@ -1,4 +1,4 @@
-var azure = require('./../../lib/azure')
+var azure = require('azure')
   , uuid = require('node-uuid');
 module.exports = EventService;
 
