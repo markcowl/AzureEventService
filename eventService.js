@@ -51,7 +51,7 @@ EventService.prototype = {
 
     showResults: function (res, eventList) {
         res.render('index', { 
-            title: 'My Events', 
+            title: 'My Hikes', 
             eventList: eventList 
         });
     },
