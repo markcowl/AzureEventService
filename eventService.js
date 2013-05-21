@@ -31,7 +31,7 @@ EventService.prototype = {
                 res.render('detail', {
                     title: eventItem.name,
                     eventItem: eventItem,
-                    imageUrl: self.blobClient.getBlobUrl('myphotos', eventItem.RowKey).url(),
+                    imageUrl: self.blobClient.getBlobUrl('myphotos', eventItem.RowKey),
                 });
             }
         });
